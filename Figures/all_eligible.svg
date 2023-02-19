@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="all_eligible.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.50126683"
+     inkscape:cx="520.68077"
+     inkscape:cy="494.74648"
+     inkscape:window-width="1368"
+     inkscape:window-height="850"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1463" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1738" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1730"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1728" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1460" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1738-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740-8-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1738-1-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740-8-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1738-1-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740-8-9-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1738-1-2-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740-8-9-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1738-1-2-2-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1740-8-9-2-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1738-1-2-2-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1463-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-2-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1463-9-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-2-1-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1463-9-7-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-2-1-6-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1463-9-7-3-1" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032;fill-opacity:1"
+       id="path846"
+       cx="98.05265"
+       cy="123.77857"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8"
+       cx="149.90352"
+       cy="139.34694"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-7"
+       cx="137.76344"
+       cy="73.896111"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-0"
+       cx="73.896103"
+       cy="76.007423"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-78"
+       cx="37.475883"
+       cy="126.15121"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-786"
+       cx="88.675323"
+       cy="177.87849"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-3"
+       cx="152.01483"
+       cy="189.49074"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-9"
+       cx="188.96289"
+       cy="97.648422"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-2"
+       cx="107.67718"
+       cy="27.447126"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-8"
+       cx="16.362715"
+       cy="77.06308"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:1;fill:#abc837;stroke:#000000;stroke-width:0.391032"
+       id="path846-8-6"
+       cx="27.447128"
+       cy="181.04547"
+       rx="17.163416"
+       ry="15.969686"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:0.5;fill:#ff6600;stroke:#000000;stroke-width:0.391032"
+       id="path1130"
+       cx="89.19809"
+       cy="121.09126"
+       rx="2.0027246"
+       ry="1.9798982"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:0.5;fill:#ff6600;stroke:#000000;stroke-width:0.391032"
+       id="path1130-1"
+       cx="92.802994"
+       cy="130.19879"
+       rx="2.0027246"
+       ry="1.9798982"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:0.5;fill:#ff6600;stroke:#000000;stroke-width:0.391032"
+       id="path1130-6"
+       cx="105.08637"
+       cy="118.84737"
+       rx="2.0027246"
+       ry="1.9798982"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:0.5;fill:#ff6600;stroke:#000000;stroke-width:0.391032"
+       id="path1130-67"
+       cx="103.4842"
+       cy="129.40683"
+       rx="2.0027246"
+       ry="1.9798982"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:0.5;fill:#ff6600;stroke:#000000;stroke-width:0.391032"
+       id="path1130-68"
+       cx="97.07547"
+       cy="112.5117"
+       rx="2.0027246"
+       ry="1.9798982"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.419;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1740-8)"
+       d="m 113.21148,126.76826 c 20.39768,6.7169 20.27094,7.10177 20.27094,7.10177"
+       id="path7133-0"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.402;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1740-8-9)"
+       d="M 108.18772,109.52805 C 124.60545,89.626696 124.96713,89.948302 124.96713,89.948302"
+       id="path7133-0-4"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.402;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1740-8-9-2)"
+       d="m 80.18468,125.16443 c -25.797254,0.32788 -25.785475,-0.15596 -25.785475,-0.15596"
+       id="path7133-0-4-2"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.402;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1740-8-9-2-3)"
+       d="m 95.529104,137.92694 c -3.06397,25.61674 -3.54207,25.5415 -3.54207,25.5415"
+       id="path7133-0-4-2-6"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.366425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1740-8-9-2-9)"
+       d="M 91.005352,111.17309 C 82.292859,89.95344 82.733165,89.835912 82.733165,89.835912"
+       id="path7133-0-4-2-0"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="119.28941"
+       y="120.34509"
+       id="text10287"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan10285"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="119.28941"
+         y="120.34509">Pollen movement</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.281096px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 106.06875,43.783891 c -5.76218,65.434359 -5.76218,65.434359 -5.76218,65.434359"
+       id="path15752"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.258489px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-2)"
+       d="m 27.334537,84.585056 c 53.44976,29.331894 53.44976,29.331894 53.44976,29.331894"
+       id="path15752-9"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.258489px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-2-1)"
+       d="M 33.378483,172.13137 C 83.524705,137.45294 83.524705,137.45294 83.524705,137.45294"
+       id="path15752-9-8"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.241152px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-2-1-6)"
+       d="M 146.51647,178.73438 C 107.58072,137.1991 107.58072,137.1991 107.58072,137.1991"
+       id="path15752-9-8-0"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.276631px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-2-1-6-0)"
+       d="m 174.85738,100.33261 c -56.95114,13.45114 -56.95114,13.45114 -56.95114,13.45114"
+       id="path15752-9-8-0-7"
+       inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\all_eligible.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

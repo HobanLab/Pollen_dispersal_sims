@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+```{r}
+#Load libraries 
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+theme_set(theme_bw())
+
+#Load in ideal data 
+load("tidy_df.Rdata")
+tidy_df_ideal = tidy_df
+#remove col to make same # cols 
+tidy_df_ideal = subset(tidy_df_ideal, select = -c(seeds_per_tree))
+
+#Realistic data
+load("tidy_df_realistic.Rdata")
+tidy_df_realistic = tidy_df
+
+#Create new columns to identify scenarios 
+tidy_df_ideal$samp_type = "ideal"
+tidy_df_realistic$samp_type = "realistic"
+
+#Combine dataframes
+combined_ideal_real = rbind(tidy_df_ideal, tidy_df_realistic)
+```
+
+```{r}
+str(combined_ideal_real)
+#Convert to factors for ANOVA
+combined_ideal_real$donor_type = factor(combined_ideal_real$donor_type)
+combined_ideal_real$maternal_trees = factor(combined_ideal_real$maternal_trees)
+combined_ideal_real$samp_type = factor(combined_ideal_real$samp_type)
+```
+
+```{r}
+#defining more descriptive labels for the facets 
+mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100")
+
+#Plotting the data
+combined_ideal_real %>%
+    filter(total_seeds==200) %>%
+    filter(as.numeric(maternal_trees)>1) %>%
+    ggplot(aes(x=donor_type, y=as.numeric(prop_capt), color=samp_type)) +
+    geom_boxplot() +
+    facet_wrap(vars(as.numeric(maternal_trees)), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
+    ylim(0,1) + 
+    ggtitle("Genetic diversity capture for scenarios with 200 total seeds sampled") +
+    xlab("Donor type") +
+    ylab("Proportion of alleles captured") +
+    labs(color = "Sampling Type") +
+    scale_x_discrete(labels=c("Eligible","Same","Skewed"))
+```
+
+Compute ANOVA:
+Factors: maternal trees sampled, donor type, and sample type? 
+Response variable: proportion of alleles captured 
+Interaction between maternal trees and donor types because they interact to create a syngergistic effect 
+```{r}
+anova_result = aov(prop_capt ~ maternal_trees * donor_type * samp_type, data = combined_ideal_real)
+summary(anova_result)
+TukeyHSD(anova_result)
+```
+

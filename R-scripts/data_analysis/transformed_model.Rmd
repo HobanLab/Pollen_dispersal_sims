@@ -49,3 +49,5 @@ ggplot(data=preds) +
     ylab("Proportion of alleles captured") +
     xlab("Total seeds sampled")
 ```
+
+
