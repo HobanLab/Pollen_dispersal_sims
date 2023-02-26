@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg18482"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="realistic_v_ideal.svg"
-   inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\seed_per_tree.png"
+   inkscape:export-filename="C:\Users\kayle\Documents\Pollen_dispersal_sims\Figures\realistic_v_ideal.png"
    inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata72">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <sodipodi:namedview
      id="namedview18484"
      pagecolor="#ffffff"
@@ -29,12 +41,13 @@
      inkscape:zoom="0.55411055"
      inkscape:cx="525.16596"
      inkscape:cy="561.25984"
-     inkscape:window-width="1368"
-     inkscape:window-height="850"
-     inkscape:window-x="-6"
-     inkscape:window-y="-6"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer3"
+     inkscape:document-rotation="0" />
   <defs
      id="defs18479">
     <rect
@@ -122,12 +135,11 @@
        inkscape:export-ydpi="96" />
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-10.167109,9.0723473)"
+       transform="matrix(0.26458333,0,0,0.26458333,-10.455635,9.0723473)"
        id="text25446"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25448);fill:#000000;fill-opacity:1;stroke:none"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25448);fill:#000000;fill-opacity:1;stroke:none;"><tspan
          x="-27.070312"
-         y="153.12973"
-         id="tspan33126">Realistic</tspan></text>
+         y="153.12973"><tspan>Realistic</tspan></tspan></text>
   </g>
   <g
      inkscape:label="Layer 1"
@@ -140,18 +152,6 @@
        cy="84.328835"
        rx="27.686787"
        ry="26.015564" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798"
-       cx="11.22106"
-       cy="75.733971"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-1"
-       cx="26.739553"
-       cy="68.332848"
-       r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-1-0"
@@ -190,21 +190,9 @@
        r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-0"
-       cx="39.631836"
-       cy="80.747635"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-7"
-       cx="11.459806"
-       cy="90.774963"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-8"
-       cx="30.559484"
-       cy="96.02739"
+       cx="32.469452"
+       cy="86.000061"
        r="3.1036975" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
@@ -425,9 +413,20 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-10.167109,109.34945)"
        id="text25446-6"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25448-3);fill:#000000;fill-opacity:1;stroke:none"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25448-3);fill:#000000;fill-opacity:1;stroke:none;"><tspan
          x="-27.070312"
-         y="153.12973"
-         id="tspan33128">Ideal</tspan></text>
+         y="153.12973"><tspan>Ideal</tspan></tspan></text>
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-8-7"
+       cx="14.802251"
+       cy="90.723465"
+       r="3.1036975" />
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-8-4"
+       cx="19.577169"
+       cy="74.011253"
+       r="3.1036975" />
   </g>
 </svg>

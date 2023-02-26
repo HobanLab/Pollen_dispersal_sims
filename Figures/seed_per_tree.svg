@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg18482"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="seed_per_tree.svg"
-   inkscape:export-filename="C:\Users\kayle\OneDrive\Documents\Pollen_dispersal_sims\Figures\seed_per_tree.png"
+   inkscape:export-filename="C:\Users\kayle\Documents\Pollen_dispersal_sims\Figures\seed_per_tree.png"
    inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata43">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <sodipodi:namedview
      id="namedview18484"
      pagecolor="#ffffff"
@@ -29,12 +41,13 @@
      inkscape:zoom="0.55411055"
      inkscape:cx="525.16596"
      inkscape:cy="561.25984"
-     inkscape:window-width="1368"
-     inkscape:window-height="850"
-     inkscape:window-x="-6"
-     inkscape:window-y="-6"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3" />
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0" />
   <defs
      id="defs18479">
     <marker
@@ -47,7 +60,7 @@
        inkscape:isstock="true">
       <path
          transform="scale(0.8) rotate(180) translate(12.5,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
          id="path1463" />
     </marker>
@@ -61,7 +74,7 @@
        inkscape:isstock="true">
       <path
          transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path1463-0" />
     </marker>
@@ -77,35 +90,25 @@
        width="395.228"
        height="57.75021"
        id="rect25448-3" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1463-8" />
+    </marker>
   </defs>
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="Layer 2">
-    <rect
-       style="fill:#ffffff;stroke:none;stroke-width:0.452741;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect22870"
-       width="303.2074"
-       height="96.866409"
-       x="-14.802251"
-       y="33.966385" />
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-3.00473,10.031121)"
-       id="text25446"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25448);fill:#000000;fill-opacity:1;stroke:none"><tspan
-         x="-27.070312"
-         y="153.12973"
-         id="tspan28099">Scenario 1</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,143.86039,10.031121)"
-       id="text25446-6"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25448-3);fill:#000000;fill-opacity:1;stroke:none"><tspan
-         x="-27.070312"
-         y="153.12973"
-         id="tspan28101">Scenario 2</tspan></text>
-  </g>
+     inkscape:label="Layer 2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -113,146 +116,105 @@
     <ellipse
        style="fill:#abc837;stroke:#000000;stroke-width:0.417496;stroke-opacity:1"
        id="path18565"
-       cx="23.874594"
-       cy="84.328835"
+       cx="98.363335"
+       cy="107.24845"
        rx="27.686787"
        ry="26.015564" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798"
-       cx="11.22106"
-       cy="75.733971"
+       cx="85.709801"
+       cy="98.653587"
        r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-1"
-       cx="26.739553"
-       cy="68.332848"
+       cx="101.22829"
+       cy="91.252464"
        r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-1-0"
-       cx="83.083603"
-       cy="116.74678"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-1-9"
-       cx="221.55627"
-       cy="116.74678"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-1-94"
-       cx="233.37419"
-       cy="116.74678"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-1-96"
-       cx="245.19212"
-       cy="116.74678"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-1-8"
-       cx="257.01004"
-       cy="116.74679"
-       r="3.1036975" />
-    <circle
-       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-       id="path18798-1-7"
-       cx="268.82797"
-       cy="116.74678"
+       cx="157.57236"
+       cy="140.9198"
        r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-0"
-       cx="39.631836"
-       cy="80.747635"
+       cx="114.12058"
+       cy="103.66725"
        r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-7"
-       cx="11.459806"
-       cy="90.774963"
+       cx="85.948547"
+       cy="113.69458"
        r="3.1036975" />
     <circle
        style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
        id="path18798-8"
-       cx="30.559484"
-       cy="96.02739"
+       cx="105.04823"
+       cy="118.94701"
        r="3.1036975" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 42.019292,91.729949 33.42444,20.532161"
+       d="m 117.46302,116.49861 33.42444,20.53216"
        id="path18974" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="59.686493"
-       y="94.594902"
+       x="134.17525"
+       y="117.75783"
        id="text20025"><tspan
          sodipodi:role="line"
          id="tspan20023"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
-         x="59.686493"
-         y="94.594902">Sample seed</tspan></text>
-    <g
-       id="g22564"
-       transform="translate(0,-1.4839668)">
-      <ellipse
-         style="fill:#abc837;stroke:#000000;stroke-width:0.417496;stroke-opacity:1"
-         id="path18565-3"
-         cx="164.65753"
-         cy="85.812798"
-         rx="27.686787"
-         ry="26.015564" />
-      <circle
-         style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-         id="path18798-04"
-         cx="152.004"
-         cy="77.217934"
-         r="3.1036975" />
-      <circle
-         style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-         id="path18798-1-1"
-         cx="167.52249"
-         cy="69.816811"
-         r="3.1036975" />
-      <circle
-         style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-         id="path18798-0-5"
-         cx="180.41478"
-         cy="82.231598"
-         r="3.1036975" />
-      <circle
-         style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-         id="path18798-7-6"
-         cx="152.24275"
-         cy="92.258926"
-         r="3.1036975" />
-      <circle
-         style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
-         id="path18798-8-2"
-         cx="171.34242"
-         cy="97.511353"
-         r="3.1036975" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
-         d="m 182.80223,93.213917 33.42444,20.532163"
-         id="path18974-1" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="200.46944"
-         y="96.078865"
-         id="text20025-5"><tspan
-           sodipodi:role="line"
-           id="tspan20023-1"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
-           x="200.46944"
-           y="96.078865">Sample seed</tspan></text>
-    </g>
+         x="134.17525"
+         y="117.75783">Sample seed</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-9)"
+       d="M 82.091066,116.77152 48.345784,136.772"
+       id="path18974-1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="14.675543"
+       y="117.75783"
+       id="text20025-9"><tspan
+         sodipodi:role="line"
+         id="tspan20023-9"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="14.675543"
+         y="117.75783">Sample seed</tspan></text>
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-1-0-6"
+       cx="42.019299"
+       cy="140.9198"
+       r="3.1036975" />
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-1-0-6-5"
+       cx="168.19655"
+       cy="140.9198"
+       r="3.1036975" />
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-1-0-6-7"
+       cx="178.82074"
+       cy="140.9198"
+       r="3.1036975" />
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-1-0-6-3"
+       cx="200.06912"
+       cy="140.9198"
+       r="3.1036975" />
+    <circle
+       style="fill:#ff6600;stroke:#000000;stroke-width:0.402;stroke-opacity:1"
+       id="path18798-1-0-6-0"
+       cx="189.44493"
+       cy="140.9198"
+       r="3.1036975" />
   </g>
 </svg>
