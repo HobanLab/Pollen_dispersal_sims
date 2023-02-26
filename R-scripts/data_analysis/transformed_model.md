@@ -1,35 +1,10 @@
 
 ``` r
 #Load libraries required for the whole script
-library(rstanarm)
-```
-
-    ## Warning: package 'rstanarm' was built under R version 4.0.5
-
-    ## Loading required package: Rcpp
-
-    ## Warning: replacing previous import 'lifecycle::last_warnings' by
-    ## 'rlang::last_warnings' when loading 'tibble'
-
-    ## Warning: replacing previous import 'lifecycle::last_warnings' by
-    ## 'rlang::last_warnings' when loading 'pillar'
-
-    ## This is rstanarm version 2.21.3
-
-    ## - See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!
-
-    ## - Default priors may change, so it's safest to specify priors, even if equivalent to the defaults.
-
-    ## - For execution on a local, multicore CPU with excess RAM we recommend calling
-
-    ##   options(mc.cores = parallel::detectCores())
-
-``` r
-options(mc.cores = parallel::detectCores())
+#library(rstanarm)
+#options(mc.cores = parallel::detectCores())
 library(dplyr)
 ```
-
-    ## Warning: package 'dplyr' was built under R version 4.0.5
 
     ## 
     ## Attaching package: 'dplyr'
@@ -44,17 +19,7 @@ library(dplyr)
 
 ``` r
 library(tidyr)
-```
-
-    ## Warning: package 'tidyr' was built under R version 4.0.5
-
-``` r
 library(ggplot2)
-```
-
-    ## Warning: package 'ggplot2' was built under R version 4.0.5
-
-``` r
 theme_set(theme_bw())
 
 source("hpdi.R")
@@ -69,7 +34,7 @@ tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
 tidy_df$maternal_trees = as.numeric(tidy_df$maternal_trees)
 #Running the model
-transformed_model = glm(prop_capt ~ log(total_seeds) * log(maternal_trees) * donor_type, data = tidy_df) #removed weights=total_seeds
+transformed_model = lm(prop_capt ~ log(total_seeds) * log(maternal_trees) * donor_type, data = tidy_df) #removed weights=total_seeds
 # #Save the model since it takes so long to run
 save(transformed_model, file = "transformed_model.Rdata")
 #Load the model from previously saved run
@@ -80,12 +45,12 @@ summary(transformed_model, digits = 4)
 
     ## 
     ## Call:
-    ## glm(formula = prop_capt ~ log(total_seeds) * log(maternal_trees) * 
+    ## lm(formula = prop_capt ~ log(total_seeds) * log(maternal_trees) * 
     ##     donor_type, data = tidy_df)
     ## 
-    ## Deviance Residuals: 
-    ##       Min         1Q     Median         3Q        Max  
-    ## -0.265841  -0.018967  -0.000248   0.021007   0.150021  
+    ## Residuals:
+    ##       Min        1Q    Median        3Q       Max 
+    ## -0.265841 -0.018967 -0.000248  0.021007  0.150021 
     ## 
     ## Coefficients:
     ##                                                           Estimate Std. Error
@@ -117,13 +82,9 @@ summary(transformed_model, digits = 4)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## (Dispersion parameter for gaussian family taken to be 0.001212871)
-    ## 
-    ##     Null deviance: 8097.39  on 140249  degrees of freedom
-    ## Residual deviance:  170.09  on 140238  degrees of freedom
-    ## AIC: -543720
-    ## 
-    ## Number of Fisher Scoring iterations: 2
+    ## Residual standard error: 0.03483 on 140238 degrees of freedom
+    ## Multiple R-squared:  0.979,  Adjusted R-squared:  0.979 
+    ## F-statistic: 5.942e+05 on 11 and 140238 DF,  p-value: < 2.2e-16
 
 ``` r
 #Creating a new dataframe of values to base predictions on 
@@ -134,16 +95,24 @@ pmu = predict(transformed_model, re.form=NA, transform = TRUE, newdata=newd)
 #Creating a dataframe to plot in ggplot 
 preds <- cbind(newd, pmu)
 
+#defining a color palette to use for the plots (color-blind accessible)
+cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
+
+#defining more descriptive labels for the facets 
+mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100") 
+
 #Plotting the data
 ggplot(data=preds) +
     geom_point(data = tidy_df, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
-    facet_wrap(vars(maternal_trees)) +
-    geom_line(mapping = aes(x=total_seeds, y=pmu, lty=donor_type)) +
-    ylim(0,1) +
+    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    geom_line(data=preds, mapping = aes(x=total_seeds, y=pmu, lty=donor_type), show.legend=F) +
+    ggtitle("Genetic diversity capture across all ideal sampling scenarios") +
     ylab("Proportion of alleles captured") +
-    xlab("Total seeds sampled")
+    xlab("Total seeds sampled") +
+    scale_colour_manual(values=cbPalette, labels = c("All eligible", "All same", "Skewed")) + 
+    theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
+    labs(color = "Donor Type")
 ```
-
-    ## Warning: Removed 961 row(s) containing missing values (geom_path).
 
 ![](transformed_model_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->

@@ -1,10 +1,21 @@
----
-output: github_document
----
 
-```{r}
+``` r
 #Load libraries 
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 library(tidyr)
 library(ggplot2)
 theme_set(theme_bw())
@@ -27,7 +38,7 @@ tidy_df_realistic$samp_type = "realistic"
 combined_ideal_real = rbind(tidy_df_ideal, tidy_df_realistic)
 ```
 
-```{r}
+``` r
 #Make sure variables are in the correct format 
 combined_ideal_real$donor_type = factor(combined_ideal_real$donor_type)
 combined_ideal_real$samp_type = factor(combined_ideal_real$samp_type)
@@ -35,7 +46,7 @@ combined_ideal_real$prop_capt = as.numeric(combined_ideal_real$prop_capt)
 combined_ideal_real$maternal_trees = as.numeric(combined_ideal_real$maternal_trees)
 ```
 
-```{r}
+``` r
 #defining more descriptive labels for the facets 
 mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
 names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100")
@@ -60,8 +71,11 @@ combined_ideal_real %>%
     scale_colour_manual(values=cbPalette, labels = c("Eligible ideal", "Eligible realistic", "Skewed ideal", "Skewed realistic", "Same ideal", "Same realistic"))
 ```
 
-T-tests to compare equivalent scenarios between ideal and realistic: 
-```{r}
+![](anovas_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+T-tests to compare equivalent scenarios between ideal and realistic:
+
+``` r
 p_vals_same = c()
 ideal_avg = c()
 realistic_avg = c()
@@ -103,5 +117,3 @@ p_values_combined = p_values_combined[order(p_values_combined$maternal_trees),]
 
 write.csv(p_values_combined, file='../../R-scripts/p_values_ideal_realistic.csv')
 ```
-
-
