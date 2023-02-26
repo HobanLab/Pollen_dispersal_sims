@@ -33,12 +33,13 @@ str(combined_ideal_real)
 combined_ideal_real$donor_type = factor(combined_ideal_real$donor_type)
 combined_ideal_real$maternal_trees = factor(combined_ideal_real$maternal_trees)
 combined_ideal_real$samp_type = factor(combined_ideal_real$samp_type)
+combined_ideal_real$prop_capt = as.numeric(combined_ideal_real$prop_capt)
 ```
 
 ```{r}
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
-names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100")
+mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100")
 
 #Plotting the data
 combined_ideal_real %>%
@@ -46,23 +47,81 @@ combined_ideal_real %>%
     filter(as.numeric(maternal_trees)>1) %>%
     ggplot(aes(x=donor_type, y=as.numeric(prop_capt), color=samp_type)) +
     geom_boxplot() +
-    facet_wrap(vars(as.numeric(maternal_trees)), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    facet_wrap(vars(as.numeric(maternal_trees))) +
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     ylim(0,1) + 
     ggtitle("Genetic diversity capture for scenarios with 200 total seeds sampled") +
     xlab("Donor type") +
     ylab("Proportion of alleles captured") +
     labs(color = "Sampling Type") +
-    scale_x_discrete(labels=c("Eligible","Same","Skewed"))
+    scale_x_discrete(labels=c("Eligible","Same","Skewed")) 
 ```
 
 Compute ANOVA:
 Factors: maternal trees sampled, donor type, and sample type? 
 Response variable: proportion of alleles captured 
-Interaction between maternal trees and donor types because they interact to create a syngergistic effect 
+Interactions between all factors because they may all interact to create a synergistic effect 
 ```{r}
 anova_result = aov(prop_capt ~ maternal_trees * donor_type * samp_type, data = combined_ideal_real)
 summary(anova_result)
 TukeyHSD(anova_result)
 ```
+
+Checking assumptions
+```{r}
+#Residuals vs fits plot 
+plot(anova_result, 1)
+library(car)
+#Levene test to check homogeneity of variances 
+leveneTest(as.numeric(prop_capt) ~ maternal_trees * donor_type * samp_type, data = combined_ideal_real)
+#Normality of residuals 
+plot(anova_result, 2)
+#Shapiro Wilke normality test
+aov_residuals = residuals(object = anova_result)
+shapiro.test(x = sample(aov_residuals, 5000))
+```
+Here we can see that the assumptions of the ANOVA are violated, so if proceeding, need to run equivalent non-parametric analyses. 
+Also important to note that the study design is unbalanced, meaning that there are different numbers of subject in each group.
+
+T-tests to compare equivalent scenarios between ideal and realistic: 
+
+```{r}
+p_vals_same = c()
+ideal_avg = c()
+realistic_avg = c()
+mat_trees = c(2, 5, 10, 25, 50, 100)
+for(i in 1:length(mat_trees)) {
+    subset = combined_ideal_real %>% filter(total_seeds == 200) %>% filter(maternal_trees == mat_trees[i]) %>% filter(donor_type == 'all_same')
+    ideal_avg[i] = mean((subset %>% filter(samp_type == "ideal"))$prop_capt)
+    realistic_avg[i] = mean((subset %>% filter(samp_type == "realistic"))$prop_capt)
+    p_vals_same[i] = t.test(subset$prop_capt ~ subset$samp_type)$p.value   
+}
+same_table = data.frame(donor_type = rep("same", 6), maternal_trees_samp = mat_trees, tot_seeds_sampled = rep(200, 6), prop_capt_ideal = ideal_avg, prop_capt_realistic = realistic_avg, p_value = p_vals_same)
+same_table
+
+p_vals_skewed = c()
+mat_trees = c(2, 5, 10, 25, 50, 100)
+for(i in 1:length(mat_trees)) {
+    subset = combined_ideal_real %>% filter(total_seeds == 200) %>% filter(maternal_trees == mat_trees[i]) %>% filter(donor_type == 'skewed')
+    ideal_avg[i] = mean((subset %>% filter(samp_type == "ideal"))$prop_capt)
+    realistic_avg[i] = mean((subset %>% filter(samp_type == "realistic"))$prop_capt)
+    p_vals_skewed[i] = t.test(subset$prop_capt ~ subset$samp_type)$p.value   
+}
+skewed_table = data.frame(donor_type = rep("skewed", 6), maternal_trees_samp = mat_trees, tot_seeds_sampled = rep(200, 6), prop_capt_ideal = ideal_avg, prop_capt_realistic = realistic_avg, p_value = p_vals_skewed)
+skewed_table
+
+p_vals_eligible = c()
+mat_trees = c(2, 5, 10, 25, 50, 100)
+for(i in 1:length(mat_trees)) {
+    subset = combined_ideal_real %>% filter(total_seeds == 200) %>% filter(maternal_trees == mat_trees[i]) %>% filter(donor_type == 'all_eligible')
+    ideal_avg[i] = mean((subset %>% filter(samp_type == "ideal"))$prop_capt)
+    realistic_avg[i] = mean((subset %>% filter(samp_type == "realistic"))$prop_capt)
+    p_vals_eligible[i] = t.test(subset$prop_capt ~ subset$samp_type)$p.value   
+}
+eligible_table = data.frame(donor_type = rep("eligible", 6), maternal_trees_samp = mat_trees, tot_seeds_sampled = rep(200, 6), prop_capt_ideal = ideal_avg, prop_capt_realistic = realistic_avg, p_value = p_vals_eligible)
+skewed_table
+
+p_values_combined = rbind(same_table, skewed_table, eligible_table)
+```
+
 
