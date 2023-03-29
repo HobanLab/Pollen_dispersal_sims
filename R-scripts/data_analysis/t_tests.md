@@ -91,7 +91,8 @@ combined_ideal_real %>%
 
 ![](t_tests_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-T-tests to compare equivalent scenarios between ideal and realistic:
+T-tests to compare equivalent scenarios between ideal and realistic when
+200 seeds are sampled:
 
 ``` r
 p_vals_same = c()
@@ -133,7 +134,75 @@ p_values_combined$prop_capt_realistic = signif(p_values_combined$prop_capt_reali
 
 p_values_combined = p_values_combined[order(p_values_combined$maternal_trees),]
 
-write.csv(p_values_combined, file='../../R-scripts/p_values_ideal_realistic.csv')
+#write.csv(p_values_combined, file='../../R-scripts/p_values_ideal_realistic.csv')
+```
+
+Plotting results for when 400 plants are sampled:
+
+``` r
+#Plotting the data
+combined_ideal_real %>%
+    filter(total_seeds==400) %>%
+    filter(as.numeric(maternal_trees)>1) %>%
+    ggplot() +
+    geom_boxplot(aes(x=donor_type, y=as.numeric(prop_capt), color=interaction(samp_type, donor_type))) +
+    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
+    ylim(0.3,1) + 
+    ggtitle("Genetic diversity capture for scenarios with 400 total seeds sampled") +
+    xlab("Donor type") +
+    ylab("Proportion of alleles captured") +
+    labs(color = "Sampling Type") +
+    scale_x_discrete(labels=c("Eligible","Same","Skewed")) + 
+    scale_colour_manual(values=cbPalette, labels = c("Eligible ideal", "Eligible realistic", "Same ideal", "Same realistic", "Skewed ideal", "Skewed realistic"))
+```
+
+![](t_tests_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+T-tests to compare equivalent scenarios between ideal and realistic when
+400 seeds are sampled:
+
+``` r
+p_vals_same = c()
+ideal_avg = c()
+realistic_avg = c()
+mat_trees = c(2, 5, 10, 25, 50, 100)
+for(i in 1:length(mat_trees)) {
+    subset = combined_ideal_real %>% filter(total_seeds == 400) %>% filter(maternal_trees == mat_trees[i]) %>% filter(donor_type == 'all_same')
+    ideal_avg[i] = mean((subset %>% filter(samp_type == "ideal"))$prop_capt)
+    realistic_avg[i] = mean((subset %>% filter(samp_type == "realistic"))$prop_capt)
+    p_vals_same[i] = t.test(subset$prop_capt ~ subset$samp_type)$p.value   
+}
+same_table = data.frame(donor_type = rep("same", 6), maternal_trees_samp = mat_trees, tot_seeds_sampled = rep(400, 6), prop_capt_ideal = ideal_avg, prop_capt_realistic = realistic_avg, p_value = p_vals_same)
+
+p_vals_skewed = c()
+mat_trees = c(2, 5, 10, 25, 50, 100)
+for(i in 1:length(mat_trees)) {
+    subset = combined_ideal_real %>% filter(total_seeds == 400) %>% filter(maternal_trees == mat_trees[i]) %>% filter(donor_type == 'skewed')
+    ideal_avg[i] = mean((subset %>% filter(samp_type == "ideal"))$prop_capt)
+    realistic_avg[i] = mean((subset %>% filter(samp_type == "realistic"))$prop_capt)
+    p_vals_skewed[i] = t.test(subset$prop_capt ~ subset$samp_type)$p.value   
+}
+skewed_table = data.frame(donor_type = rep("skewed", 6), maternal_trees_samp = mat_trees, tot_seeds_sampled = rep(400, 6), prop_capt_ideal = ideal_avg, prop_capt_realistic = realistic_avg, p_value = p_vals_skewed)
+
+p_vals_eligible = c()
+mat_trees = c(2, 5, 10, 25, 50, 100)
+for(i in 1:length(mat_trees)) {
+    subset = combined_ideal_real %>% filter(total_seeds == 400) %>% filter(maternal_trees == mat_trees[i]) %>% filter(donor_type == 'all_eligible')
+    ideal_avg[i] = mean((subset %>% filter(samp_type == "ideal"))$prop_capt)
+    realistic_avg[i] = mean((subset %>% filter(samp_type == "realistic"))$prop_capt)
+    p_vals_eligible[i] = t.test(subset$prop_capt ~ subset$samp_type)$p.value   
+}
+eligible_table = data.frame(donor_type = rep("eligible", 6), maternal_trees_samp = mat_trees, tot_seeds_sampled = rep(400, 6), prop_capt_ideal = ideal_avg, prop_capt_realistic = realistic_avg, p_value = p_vals_eligible)
+
+p_values_combined = rbind(same_table, skewed_table, eligible_table)
+p_values_combined$p_value = signif(p_values_combined$p_value, digits = 3)
+p_values_combined$prop_capt_ideal = signif(p_values_combined$prop_capt_ideal)
+p_values_combined$prop_capt_realistic = signif(p_values_combined$prop_capt_realistic)
+
+p_values_combined = p_values_combined[order(p_values_combined$maternal_trees),]
+
+#write.csv(p_values_combined, file='../../R-scripts/p_values_ideal_realistic_400.csv')
 ```
 
 -----
