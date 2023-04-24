@@ -14,7 +14,7 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-load("../Rdata/tidy_df_ideal.Rdata")
+load("../Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -96,7 +96,7 @@ tidy_df %>%
 
 ```{r}
 #Load in data
-load("tidy_df_realistic.Rdata")
+load("../Rdata/tidy_df_realistic_twopop.Rdata")
 tidy_df_realistic = tidy_df
 #Making sure the data is in the correct format
 tidy_df_realistic$prop_capt = as.numeric(tidy_df$prop_capt)
@@ -166,13 +166,13 @@ tidy_df_realistic %>%
   
 **Comparing ideal and realistic scenarios directly**  
 ```{r}
-load("tidy_df.Rdata")
+load("../Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
 tidy_df$maternal_trees = as.numeric(tidy_df$maternal_trees)
 #remove col to make same # cols 
-tidy_df = subset(tidy_df, select = -c(seeds_per_tree))
+#tidy_df = subset(tidy_df, select = -c(seeds_per_tree))
 #Create new columns to identify scenarios 
 tidy_df$samp_type = "ideal"
 tidy_df_realistic$samp_type = "realistic"
