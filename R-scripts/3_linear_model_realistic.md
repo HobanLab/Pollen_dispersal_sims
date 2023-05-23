@@ -67,7 +67,8 @@ colnames(preds_2) = c("maternal_trees", "total_seeds", "donor_type", "pmu")
 preds = rbind(preds_1, preds_2)
 
 #defining a color palette to use for the plots (color-blind accessible)
-cbPalette = c("#367a9c", "#b7e2f7", "#73bade") 
+cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
+
 
 #defining more descriptive labels for the facets 
 mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees") #removed 1 maternal tree 

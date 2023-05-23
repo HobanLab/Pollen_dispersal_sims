@@ -12,9 +12,9 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-#load("Rdata/tidy_df.Rdata")
+load("Rdata/tidy_df_ideal.Rdata")
 #Two pop data:
-load("Rdata/tidy_df_ideal_twopop.Rdata")
+#load("Rdata/tidy_df_ideal_twopop.Rdata")
 ```
 
 ```{r}
@@ -56,7 +56,7 @@ colnames(preds_2) = c("maternal_trees", "total_seeds", "donor_type", "pmu")
 preds = rbind(preds_1, preds_2)
 
 #defining a color palette to use for the plots (color-blind accessible)
-cbPalette <- c("#539165", "#C7E9B0", "#9DC08B")
+cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
 mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")

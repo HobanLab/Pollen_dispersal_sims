@@ -14,7 +14,7 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-load("../Rdata/tidy_df_ideal_twopop.Rdata")
+load("Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -96,7 +96,7 @@ tidy_df %>%
 
 ```{r}
 #Load in data
-load("../Rdata/tidy_df_realistic_twopop.Rdata")
+load("Rdata/tidy_df_realistic_twopop.Rdata")
 tidy_df_realistic = tidy_df
 #Making sure the data is in the correct format
 tidy_df_realistic$prop_capt = as.numeric(tidy_df$prop_capt)
@@ -166,7 +166,7 @@ tidy_df_realistic %>%
   
 **Comparing ideal and realistic scenarios directly**  
 ```{r}
-load("../Rdata/tidy_df_ideal_twopop.Rdata")
+load("Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -203,7 +203,7 @@ combined_ideal_real %>%
     facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     ylim(0.3,1) + 
-    ggtitle("Genetic diversity capture for scenarios with 200 total seeds sampled") +
+    ggtitle("Genetic diversity capture for scenarios with 400 total seeds sampled") +
     xlab("Donor type") +
     ylab("Proportion of alleles captured") +
     labs(color = "Sampling Type") +

@@ -14,9 +14,9 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-#load("Rdata/tidy_df.Rdata")
+load("Rdata/tidy_df_ideal.Rdata")
 #Two pop data:
-load("Rdata/tidy_df_ideal_twopop.Rdata")
+#load("Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -37,7 +37,7 @@ ggplot(tidy_df, aes(x=as.numeric(total_alleles))) +
 Scatter plot of all raw data obtained from resampling. Plots are faceted by maternal trees, and each color line represents a different pollen donor type. 
 ```{r}
 #defining a color palette to use for the plots (color-blind accessible)
-cbPalette <- c("#539165", "#C7E9B0", "#9DC08B")
+cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
 mat_tree_labs = c("1", "2", "5", "10", "25", "50", "100")
@@ -98,9 +98,9 @@ tidy_df %>%
 
 ```{r}
 #Load in data
-#load("Rdata/tidy_df_realistic.Rdata")
+load("Rdata/tidy_df_realistic.Rdata")
 #Two pop data:
-load("Rdata/tidy_df_realistic_twopop.Rdata")
+#load("Rdata/tidy_df_realistic_twopop.Rdata")
 tidy_df_realistic = tidy_df
 #Making sure the data is in the correct format
 tidy_df_realistic$prop_capt = as.numeric(tidy_df$prop_capt)
@@ -111,7 +111,7 @@ tidy_df_realistic$maternal_trees = as.numeric(tidy_df$maternal_trees)
 Plot all data together
 ```{r}
 #defining a color palette to use for the plots (color-blind accessible)
-cbPalette = c("#367a9c", "#b7e2f7", "#73bade") 
+cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
 mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
@@ -170,15 +170,15 @@ tidy_df_realistic %>%
   
 **Comparing ideal and realistic scenarios directly**  
 ```{r}
-#load("Rdata/tidy_df.Rdata")
+load("Rdata/tidy_df_ideal.Rdata")
 #Two pops
-load("Rdata/tidy_df_ideal_twopop.Rdata")
+#load("Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
 tidy_df$maternal_trees = as.numeric(tidy_df$maternal_trees)
 #remove col to make same # cols 
-#tidy_df = subset(tidy_df, select = -c(seeds_per_tree))
+tidy_df = subset(tidy_df, select = -c(seeds_per_tree))
 #Create new columns to identify scenarios 
 tidy_df$samp_type = "ideal"
 tidy_df_realistic$samp_type = "realistic"
@@ -198,11 +198,11 @@ mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "
 names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100")
 
 #defining a color palette to use for the plots (color-blind accessible)
-cbPalette <- c("#539165", "#367a9c", "#C7E9B0", "#b7e2f7", "#9DC08B", "#73bade")
+cbPalette <- c("#E69F00", "#f5d58e", "#56B4E9", "#96daf2", "#CC79A7", "#fcd2e9")
 
 #Plotting the data
 combined_ideal_real %>%
-    filter(total_seeds==200) %>%
+    filter(total_seeds==400) %>%
     filter(as.numeric(maternal_trees)>1) %>%
     ggplot() +
     geom_boxplot(aes(x=donor_type, y=as.numeric(prop_capt), color=interaction(samp_type, donor_type))) +

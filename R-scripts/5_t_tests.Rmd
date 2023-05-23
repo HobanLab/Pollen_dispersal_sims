@@ -10,7 +10,7 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in ideal data 
-load("Rdata/tidy_df.Rdata")
+load("Rdata/tidy_df_ideal.Rdata")
 tidy_df_ideal = tidy_df
 #remove col to make same # cols 
 tidy_df_ideal = subset(tidy_df_ideal, select = -c(seeds_per_tree))
@@ -194,4 +194,22 @@ mean_skewed = mean(as.numeric(realistic_skewed$prop_capt))
 
 mean_eligible - mean_skewed
 mean_eligible - mean_same
+```
+
+***  
+  
+Calculating the mean proportion of alleles captured for each donor type when 2 trees are sampled with 200 seeds total 
+```{r}
+eligible = tidy_df_ideal %>% filter(maternal_trees == 2) %>% 
+    filter(total_seeds == 200) %>%
+    filter(donor_type == "all_eligible")
+skewed = tidy_df_ideal %>% filter(maternal_trees == 2) %>% 
+    filter(total_seeds == 200) %>%
+    filter(donor_type == "skewed")
+same = tidy_df_ideal %>% filter(maternal_trees == 2) %>% 
+    filter(total_seeds == 200) %>%
+    filter(donor_type == "all_same")
+mean(eligible$prop_capt)
+mean(skewed$prop_capt)
+mean(same$prop_capt)
 ```
