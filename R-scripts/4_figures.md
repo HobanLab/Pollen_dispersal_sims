@@ -88,7 +88,7 @@ tidy_df %>%
     facet_wrap(vars(as.numeric(maternal_trees)), labeller = labeller(maternal_trees = mat_tree_labs)) +
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     ylim(0,1) + 
-    ggtitle("Genetic diversity capture for ideal scenarios with 200 total seeds sampled") +
+    ggtitle("Ex situ genetic diversity representation for ideal scenarios with 200 total seeds sampled") +
     xlab("Donor type") +
     ylab("Proportion of alleles captured") +
     scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) +
@@ -170,7 +170,7 @@ tidy_df_realistic %>%
     facet_wrap(vars(as.numeric(maternal_trees)), labeller = labeller(maternal_trees = mat_tree_labs)) +
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     ylim(0,1) + 
-    ggtitle("Genetic diversity capture for realistic scenarios with 200 total seeds sampled") +
+    ggtitle("Ex situ genetic diversity representation for realistic scenarios with 200 total seeds sampled") +
     xlab("Donor type") +
     ylab("Proportion of alleles captured") +
     scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) +
@@ -240,14 +240,14 @@ cbPalette <- c("#E69F00", "#f5d58e", "#56B4E9", "#96daf2", "#CC79A7", "#fcd2e9")
 
 #Plotting the data
 combined_ideal_real %>%
-    filter(total_seeds==400) %>%
+    filter(total_seeds==200) %>%
     filter(as.numeric(maternal_trees)>1) %>%
     ggplot() +
     geom_boxplot(aes(x=donor_type, y=as.numeric(prop_capt), color=interaction(samp_type, donor_type))) +
     facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     ylim(0.3,1) + 
-    ggtitle("Genetic diversity capture for scenarios with 400 total seeds sampled") +
+    ggtitle("Ex situ genetic diversity representation for scenarios with 200 total seeds sampled") +
     xlab("Donor type") +
     ylab("Proportion of alleles captured") +
     labs(color = "Sampling Type") +
@@ -256,3 +256,23 @@ combined_ideal_real %>%
 ```
 
 ![](4_figures_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+``` r
+#Plotting a subset of the data for presentation 
+combined_ideal_real %>%
+    filter(total_seeds==200) %>%
+    filter(as.numeric(maternal_trees) == c(2, 10, 25, 100)) %>%
+    ggplot() +
+    geom_boxplot(aes(x=donor_type, y=as.numeric(prop_capt), color=interaction(samp_type, donor_type))) +
+    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
+    ylim(0.3,1) + 
+    ggtitle("Ex situ genetic diversity representation for scenarios with 200 total seeds sampled") +
+    xlab("Donor type") +
+    ylab("Proportion of alleles captured") +
+    labs(color = "Sampling Type") +
+    scale_x_discrete(labels=c("Eligible","Same","Skewed")) + 
+    scale_colour_manual(values=cbPalette, labels = c("Eligible ideal", "Eligible realistic", "Single ideal", "Single realistic", "Skewed ideal", "Skewed realistic"))
+```
+
+![](4_figures_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->

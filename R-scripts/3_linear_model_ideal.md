@@ -23,9 +23,9 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-#load("Rdata/tidy_df_ideal.Rdata")
+load("Rdata/tidy_df_ideal.Rdata")
 #Two pop data:
-load("Rdata/tidy_df_ideal_twopop.Rdata")
+#load("Rdata/tidy_df_ideal_twopop.Rdata")
 ```
 
 ``` r
@@ -75,10 +75,10 @@ names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100")
 
 #Plotting the data
 ggplot(data=preds) +
-    geom_point(data = tidy_df, aes(x=as.numeric(total_seeds*2), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
+    geom_point(data = tidy_df, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
     facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
-    geom_line(data=preds, mapping = aes(x=(total_seeds*2), y=pmu, lty=donor_type), show.legend=F) +
-    ggtitle("Genetic diversity capture across all ideal sampling scenarios") +
+    geom_line(data=preds, mapping = aes(x=(total_seeds), y=pmu, lty=donor_type), show.legend=F) +
+    ggtitle("Ex situ genetic diversity representation across all ideal sampling scenarios") +
     ylab("Proportion of alleles captured") +
     xlab("Total seeds sampled") +
     scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
@@ -87,3 +87,30 @@ ggplot(data=preds) +
 ```
 
 ![](3_linear_model_ideal_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+``` r
+#Plotting a subset of the data
+tidy_df_sub = filter(tidy_df, maternal_trees == c(1, 10, 25, 100))
+```
+
+    ## Warning: There was 1 warning in `filter()`.
+    ## ℹ In argument: `maternal_trees == c(1, 10, 25, 100)`.
+    ## Caused by warning in `maternal_trees == c(1, 10, 25, 100)`:
+    ## ! longer object length is not a multiple of shorter object length
+
+``` r
+preds_sub = filter(preds, maternal_trees == c(1, 10, 25, 100))
+
+ggplot(data=preds_sub) +
+    geom_point(data=tidy_df_sub, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) + 
+    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    geom_line(data=preds_sub, mapping = aes(x=(total_seeds), y=pmu, lty=donor_type), show.legend=F) +
+    ggtitle("Ex situ genetic diversity representation across all ideal sampling scenarios") +
+    ylab("Proportion of alleles captured") +
+    xlab("Total seeds sampled") +
+    scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
+    theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
+    labs(color = "Donor Type")
+```
+
+![](3_linear_model_ideal_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->

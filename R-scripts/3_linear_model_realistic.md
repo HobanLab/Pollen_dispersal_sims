@@ -23,9 +23,9 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-#load("Rdata/tidy_df_realistic.Rdata")
+load("Rdata/tidy_df_realistic.Rdata")
 #Two pop data:
-load("Rdata/tidy_df_realistic_twopop.Rdata")
+#load("Rdata/tidy_df_realistic_twopop.Rdata")
 ```
 
 ``` r
@@ -76,10 +76,10 @@ names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100") #removed 1
 
 #Plotting the data
 ggplot(data=preds) +
-    geom_point(data = tidy_df, aes(x=as.numeric(total_seeds*2), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
+    geom_point(data = tidy_df, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
     facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
-    geom_line(data=preds, mapping = aes(x=(total_seeds*2), y=pmu, lty=donor_type), show.legend=F) +
-    ggtitle("Genetic diversity capture across all realistic sampling scenarios") +
+    geom_line(data=preds, mapping = aes(x=(total_seeds), y=pmu, lty=donor_type), show.legend=F) +
+    ggtitle("Ex situ genetic diversity representation across all realistic sampling scenarios") +
     ylab("Proportion of alleles captured") +
     xlab("Total seeds sampled") +
     scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
