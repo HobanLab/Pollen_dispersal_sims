@@ -4,17 +4,15 @@ output: github_document
 
 ```{r}
 #Load libraries required for the whole script
-#library(rstanarm)
-#options(mc.cores = parallel::detectCores())
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-load("Rdata/tidy_df_realistic.Rdata")
+#load("R-scripts/Rdata/tidy_df_realistic.Rdata")
 #Two pop data:
-#load("Rdata/tidy_df_realistic_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_realistic_twopop.Rdata")
 ```
 
 ```{r}
@@ -60,9 +58,10 @@ cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees") #removed 1 maternal tree 
+mat_tree_labs = c("2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants") #removed 1 maternal tree 
 names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100") #removed 1
 
+pdf("FigureS5.pdf", height = 7, width = 8)
 #Plotting the data
 ggplot(data=preds) +
     geom_point(data = tidy_df, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
@@ -71,9 +70,10 @@ ggplot(data=preds) +
     ggtitle("Ex situ genetic diversity representation across all realistic sampling scenarios") +
     ylab("Proportion of alleles captured") +
     xlab("Total seeds sampled") +
-    scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
+    scale_colour_manual(values=cbPalette, labels = c("Panmictic", "Highly limited", "Limited")) + 
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     labs(color = "Donor Type")
+dev.off()
 ```
 
 

@@ -8,13 +8,13 @@ This script is used to create figures of the raw data.
 
 ```{r}
 #Load libraries 
-library(dplyr)
+library(dplyr) 
 library(tidyr)
 library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-load("Rdata/tidy_df_ideal_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -38,7 +38,7 @@ Scatter plot of all raw data obtained from resampling. Plots are faceted by mate
 cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+mat_tree_labs = c("1 maternal plant", "2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants")
 names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100")
 
 tidy_df %>% 
@@ -166,7 +166,7 @@ tidy_df_realistic %>%
   
 **Comparing ideal and realistic scenarios directly**  
 ```{r}
-load("Rdata/tidy_df_ideal_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_ideal_twopop.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -188,12 +188,13 @@ combined_ideal_real$maternal_trees = as.numeric(combined_ideal_real$maternal_tre
 Plotting scenarios with 200 seeds sampled total 
 ```{r}
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+mat_tree_labs = c("2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants")
 names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100")
 
 #defining a color palette to use for the plots (color-blind accessible)
 cbPalette <- c("#E69F00", "#f5d58e", "#56B4E9", "#96daf2", "#CC79A7", "#fcd2e9")
 
+pdf("FigureS6.pdf", height = 7, width = 8)
 #Plotting the data
 combined_ideal_real %>%
     filter(total_seeds==200) %>%
@@ -208,5 +209,6 @@ combined_ideal_real %>%
     ylab("Proportion of alleles captured") +
     labs(color = "Sampling Type") +
     scale_x_discrete(labels=c("Eligible","Same","Skewed")) + 
-    scale_colour_manual(values=cbPalette, labels = c("Eligible ideal", "Eligible realistic", "Same ideal", "Same realistic", "Skewed ideal", "Skewed realistic"))
+    scale_colour_manual(values=cbPalette, labels = c("Panmictic ideal", "Panmictic realistic", "Highly limited ideal", "Highly limited realistic", "Limited ideal", "Limited realistic"))
+dev.off()
 ```

@@ -4,17 +4,15 @@ output: github_document
 
 ```{r}
 #Load libraries required for the whole script
-#library(rstanarm)
-#options(mc.cores = parallel::detectCores())
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-load("Rdata/tidy_df_ideal.Rdata")
+#load("R-scripts/Rdata/tidy_df_ideal.Rdata")
 #Two pop data:
-#load("Rdata/tidy_df_ideal_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_ideal_twopop.Rdata")
 ```
 
 ```{r}
@@ -59,9 +57,10 @@ preds = rbind(preds_1, preds_2)
 cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+mat_tree_labs = c("1 maternal plant", "2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants")
 names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100") 
 
+pdf("FigureS4.pdf", height = 7, width = 8)
 #Plotting the data
 ggplot(data=preds) +
     geom_point(data = tidy_df, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) +
@@ -70,24 +69,27 @@ ggplot(data=preds) +
     ggtitle("Ex situ genetic diversity representation across all ideal sampling scenarios") +
     ylab("Proportion of alleles captured") +
     xlab("Total seeds sampled") +
-    scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
+    scale_colour_manual(values=cbPalette, labels = c("Panmictic", "Highly limited", "Limited")) + 
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     labs(color = "Donor Type")
+dev.off()
 ```
 
 ```{r}
-#Plotting a subset of the data
-tidy_df_sub = filter(tidy_df, maternal_trees == c(1, 10, 25, 100))
-preds_sub = filter(preds, maternal_trees == c(1, 10, 25, 100))
+#Plotting a subset of the data with more zoomed in axes
+tidy_df_sub = filter(tidy_df, maternal_trees == c(25, 50, 100))
+preds_sub = filter(preds, maternal_trees == c(25, 50, 100))
 
+pdf("FigureS0.pdf", height = 10, width = 8)
 ggplot(data=preds_sub) +
     geom_point(data=tidy_df_sub, aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type), alpha=0.25) + 
-    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
+    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs), ncol=1) +
     geom_line(data=preds_sub, mapping = aes(x=(total_seeds), y=pmu, lty=donor_type), show.legend=F) +
     ggtitle("Ex situ genetic diversity representation across all ideal sampling scenarios") +
     ylab("Proportion of alleles captured") +
     xlab("Total seeds sampled") +
-    scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
+    scale_colour_manual(values=cbPalette, labels = c("Panmictic", "Highly limited", "Limited")) + 
     theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
     labs(color = "Donor Type")
+dev.off()
 ```

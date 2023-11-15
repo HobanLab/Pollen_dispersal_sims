@@ -14,9 +14,7 @@ library(ggplot2)
 theme_set(theme_bw())
 
 #Load in data 
-load("Rdata/tidy_df_ideal.Rdata")
-#Two pop data:
-#load("Rdata/tidy_df_ideal_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_ideal.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -41,7 +39,7 @@ cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
 mat_tree_labs = c("1", "2", "5", "10", "25", "50", "100")
-names(mat_tree_labs) = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+names(mat_tree_labs) = c("1 maternal plant", "2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants")
 
 tidy_df %>% 
     ggplot(aes(x=as.numeric(total_seeds), y=as.numeric(prop_capt), color=donor_type)) +
@@ -75,7 +73,7 @@ tidy_df %>%
     labs(color = "Donor Type")
 ```
 
-Genetic diversity capture for all scenarios with 400 total seeds sampled: 
+Genetic diversity capture for all ideal scenarios with 400 total seeds sampled: 
 ```{r}
 tidy_df %>% 
     filter(total_seeds==400) %>% 
@@ -98,9 +96,7 @@ tidy_df %>%
 
 ```{r}
 #Load in data
-load("Rdata/tidy_df_realistic.Rdata")
-#Two pop data:
-#load("Rdata/tidy_df_realistic_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_realistic.Rdata")
 tidy_df_realistic = tidy_df
 #Making sure the data is in the correct format
 tidy_df_realistic$prop_capt = as.numeric(tidy_df$prop_capt)
@@ -114,7 +110,7 @@ Plot all data together
 cbPalette <- c("#E69F00", "#56B4E9", "#CC79A7")
 
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("1 maternal tree", "2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+mat_tree_labs = c("1 maternal plant", "2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants")
 names(mat_tree_labs) = c("1", "2", "5", "10", "25", "50", "100")
 
 tidy_df_realistic %>% 
@@ -126,7 +122,7 @@ tidy_df_realistic %>%
     ggtitle("Genetic diversity capture across all realistic sampling scenarios") +
     ylab("Proportion of alleles captured") + 
     xlab("Total seeds sampled") + 
-    scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) + 
+    scale_colour_manual(values=cbPalette, labels = c("Panmictic", "Highly limited", "Limited")) + 
     labs(color = "Donor Type")
 ```
 
@@ -142,7 +138,7 @@ tidy_df_realistic %>%
     ggtitle("Ex situ genetic diversity representation for realistic scenarios with 200 total seeds sampled") +
     xlab("Donor type") +
     ylab("Proportion of alleles captured") +
-    scale_colour_manual(values=cbPalette, labels = c("All eligible", "Single", "Skewed")) +
+    scale_colour_manual(values=cbPalette, labels =  c("Panmictic", "Highly limited", "Limited")) +
     theme(axis.text.x=element_blank(),
           axis.ticks.x=element_blank()) + 
     labs(color = "Donor Type")
@@ -170,9 +166,7 @@ tidy_df_realistic %>%
   
 **Comparing ideal and realistic scenarios directly**  
 ```{r}
-load("Rdata/tidy_df_ideal.Rdata")
-#Two pops
-#load("Rdata/tidy_df_ideal_twopop.Rdata")
+load("R-scripts/Rdata/tidy_df_ideal.Rdata")
 #Making sure the data is in the correct format
 tidy_df$prop_capt = as.numeric(tidy_df$prop_capt)
 tidy_df$total_seeds = as.numeric(tidy_df$total_seeds)
@@ -194,15 +188,16 @@ combined_ideal_real$maternal_trees = as.numeric(combined_ideal_real$maternal_tre
 Plotting scenarios with 200 seeds sampled total 
 ```{r}
 #defining more descriptive labels for the facets 
-mat_tree_labs = c("2 maternal trees", "5 maternal trees", "10 maternal trees", "25 maternal trees", "50 maternal trees", "100 maternal trees")
+mat_tree_labs = c("2 maternal plants", "5 maternal plants", "10 maternal plants", "25 maternal plants", "50 maternal plants", "100 maternal plants")
 names(mat_tree_labs) = c("2", "5", "10", "25", "50", "100")
 
 #defining a color palette to use for the plots (color-blind accessible)
 cbPalette <- c("#E69F00", "#f5d58e", "#56B4E9", "#96daf2", "#CC79A7", "#fcd2e9")
 
+pdf("FigureS2.pdf", height = 7, width = 8)
 #Plotting the data
 combined_ideal_real %>%
-    filter(total_seeds==200) %>%
+    filter(total_seeds==400) %>%
     filter(as.numeric(maternal_trees)>1) %>%
     ggplot() +
     geom_boxplot(aes(x=donor_type, y=as.numeric(prop_capt), color=interaction(samp_type, donor_type))) +
@@ -214,23 +209,6 @@ combined_ideal_real %>%
     ylab("Proportion of alleles captured") +
     labs(color = "Sampling Type") +
     scale_x_discrete(labels=c("Eligible","Same","Skewed")) + 
-    scale_colour_manual(values=cbPalette, labels = c("Eligible ideal", "Eligible realistic", "Single ideal", "Single realistic", "Skewed ideal", "Skewed realistic"))
-```
-
-```{r}
-#Plotting a subset of the data for presentation 
-combined_ideal_real %>%
-    filter(total_seeds==200) %>%
-    filter(as.numeric(maternal_trees) == c(2, 10, 25, 100)) %>%
-    ggplot() +
-    geom_boxplot(aes(x=donor_type, y=as.numeric(prop_capt), color=interaction(samp_type, donor_type))) +
-    facet_wrap(vars(maternal_trees), labeller = labeller(maternal_trees = mat_tree_labs)) +
-    theme(strip.background = element_rect(color="black", fill="#F2F2F2", linetype="solid")) +
-    ylim(0.3,1) + 
-    ggtitle("Ex situ genetic diversity representation for scenarios with 200 total seeds sampled") +
-    xlab("Donor type") +
-    ylab("Proportion of alleles captured") +
-    labs(color = "Sampling Type") +
-    scale_x_discrete(labels=c("Eligible","Same","Skewed")) + 
-    scale_colour_manual(values=cbPalette, labels = c("Eligible ideal", "Eligible realistic", "Single ideal", "Single realistic", "Skewed ideal", "Skewed realistic"))
+    scale_colour_manual(values=cbPalette, labels = c("Panmictic ideal", "Panmictic realistic", "Highly limited ideal", "Highly limited realistic", "Limited ideal", "Limited realistic"))
+dev.off()
 ```
